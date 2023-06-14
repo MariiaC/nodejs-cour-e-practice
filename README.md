@@ -1,1 +1,1 @@
-# nodejs-cour-e-practice
+# nodejs-course-practice
