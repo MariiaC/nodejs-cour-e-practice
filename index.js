@@ -1,7 +1,7 @@
 // console.log('Hello world')
 const express = require('express');
 const mongoose = require('mongoose');
-const authRouter = require('./authRouter.js');
+// const authRouter = require('./authRouter.js');
 
 const PORT = process.env.PORT || 5000;
 
