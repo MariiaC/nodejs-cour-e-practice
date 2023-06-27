@@ -1,32 +1,28 @@
-const fs = require("fs/promises");
-const path = require("path");
+// index.js
+const argv = require('yargs').argv;
 
+// TODO: рефакторити
+function invokeAction({ action, id, name, email, phone }) {
+  switch (action) {
+    case 'list':
+      // ...
+      break;
 
-const contactsPath = path.join(__dirname, "contacts.json");
+    case 'get':
+      // ... id
+      break;
 
+    case 'add':
+      // ... name email phone
+      break;
 
-//функції для роботи з контактами
+    case 'remove':
+      // ... id
+      break;
 
-const listContacts = async () => {
-  const allContacts = await fs.readFile(contactsPath, "utf-8");
-  return JSON.parse(allContacts);
- };
+    default:
+      console.warn('\x1B[31m Unknown action type!');
+  }
+}
 
-const getContactById = async (id) => { 
-  const contacts = await listContacts();
-  const contactById = contacts.find(contact => contact.id === id);
-  return contactById || null;
-};
-
-const removeContact = (id) => {
-
-};
-
-const addContact=(name, email, phone)=> {};
-
-module.exports = {
-  listContacts,
-  getContactById,
-  removeContact,
-  addContact,
-};
+invokeAction(argv);
